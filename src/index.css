@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+  body {
+    @apply antialiased bg-slate-100 text-slate-900;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Optimisation tactile pour mobile/tablette au dugout */
+button, select, input {
+  touch-action: manipulation;
+}
+
+/* CONFIGURATION IMPRESSION PARFAITE A4 PAYSAGE (FEUILLE FFBS SUR 1 SEULE PAGE) */
+@page {
+  size: A4 landscape;
+  margin: 5mm 6mm;
+}
+
+@media print {
+  html, body {
+    width: 285mm !important;
+    height: 198mm !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 7.5pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    overflow: hidden !important;
+  }
+
+  /* Masquer tous les éléments d'interface non imprimables */
+  header, nav, footer, .print\:hidden {
+    display: none !important;
+  }
+
+  /* Conteneur principal d'impression calibré pour 1 page A4 paysage */
+  .ffbs-sheet-container {
+    width: 100% !important;
+    max-width: 285mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th, td {
+    border: 1px solid #1e293b !important;
+    color: #000000 !important;
+    background-color: transparent !important;
+    padding: 1px 2px !important;
+  }
+
+  /* Éléments de fond gris clair pour les en-têtes officiels */
+  .print-bg-header {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    font-weight: bold !important;
+  }
+
+  .print-bg-accent {
+    background-color: #e2e8f0 !important;
+    font-weight: bold !important;
+  }
+}
