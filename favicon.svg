@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#f8fafc" stroke="#dc2626" stroke-width="4"/>
+  <!-- Baseball stitches -->
+  <path d="M 28 14 C 40 28, 40 72, 28 86" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="3 3"/>
+  <path d="M 72 14 C 60 28, 60 72, 72 86" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="3 3"/>
+  <!-- Diamond in center -->
+  <polygon points="50,32 68,50 50,68 32,50" fill="#1b263b" stroke="#f59e0b" stroke-width="2"/>
+</svg>
